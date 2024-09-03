@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Itinerary Planner</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        .container {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            font-weight: 700;
+            text-align: center;
+        }
+        label {
+            font-size: 1.2em;
+            color: #555;
+            font-weight: 600;
+        }
+        input[type="text"] {
+            border-radius: 0.75rem;
+            border: 1px solid #ddd;
+            padding: 12px 20px;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        input[type="text"]:focus {
+            border-color: #2980b9;
+            box-shadow: 0 0 6px rgba(41, 128, 185, 0.5);
+        }
+        button {
+            background-color: #27ae60;
+            color: #ffffff;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1em;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 12px rgba(39, 174, 96, 0.2);
+        }
+        button:hover {
+            background-color: #2ecc71;
+            box-shadow: 0 6px 15px rgba(46, 204, 113, 0.3);
+        }
+        .summary {
+            background-color: #ecf0f1;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .summary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        }
+        .summary h2 {
+            color: #16a085;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .points {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .points:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        }
+        .points h2 {
+            color: #2980b9;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .points ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .points li {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+            padding: 12px;
+            border-radius: 6px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .points li:hover {
+            background-color: #f2f2f2;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Travel Itinerary Planner</h1>
+        <form method="post" action="/" class="text-center">
+            <div class="form-group">
+                <label for="url">Enter URL of the Travel Blog for Your Destination :</label>
+                <input type="text" id="url" name="url" class="form-control" placeholder="https://example.com" required>
+            </div>
+            <button type="submit" class="btn">Get Travel Budget and Itinerary Plan</button>
+        </form>
+
+        {% if summary %}
+            <div class="summary">
+                <p>{{ summary | safe}}</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
