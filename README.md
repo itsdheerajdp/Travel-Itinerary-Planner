@@ -31,4 +31,3 @@ Below are screenshots showing different parts of the website:
 ![Screenshot 3](Screenshots/img3.png)
 *Generated travel itinerary and budget.*
 
-s
